@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package com.portfolio.backend.service;
-import java.util.List;
 
 import com.portfolio.backend.model.Education;
+import java.util.List;
 /**
  *
  * @author porce

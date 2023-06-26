@@ -4,16 +4,17 @@
  */
 package com.portfolio.backend.repository;
 
-import com.portfolio.backend.model.Education;
+import com.portfolio.backend.model.Experience;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 /**
  *
- * @author porce
+ * @author admin
  */
 @Repository
-public interface EducationRepository extends JpaRepository<Education, Long>{
+public interface ExperienceRepository extends JpaRepository<Experience, Long>{
     
-   List<Education> findByUserid (Long id);
+   List<Experience> findByUserid (Long id);
 }
+

@@ -25,6 +25,11 @@ public class User {
     private String position;
     private String mail;
     private String pass;
+    private String actual_company;
+    private String actual_company_img;
+    private String actual_company_url;
+    private String localization;
+    private String about;
     
     public User (){
     };
@@ -35,7 +40,12 @@ public class User {
                 String profImg,
                 String position,
                 String mail,
-                String pass){      
+                String pass,
+                String actual_company,
+                String actual_company_img,
+                String actual_company_url,
+                String localization,
+                String about){      
             
             this.id = id;
             this.name = name;
@@ -44,5 +54,10 @@ public class User {
             this.position = position;
             this.mail = mail;
             this.pass = pass;
+            this.actual_company = actual_company;
+            this.actual_company = actual_company_img;
+            this.actual_company = actual_company_url;
+            this.localization = localization;
+            this.about = about;
     }
 }

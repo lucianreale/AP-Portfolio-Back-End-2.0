@@ -60,11 +60,11 @@ public class UserController {
     
     @PostMapping ("/user/add")
     public void addUser(@RequestBody User usu){
-         usuSrv.addUser(usu);
+        usuSrv.addUser(usu);
     }
 
     @PutMapping ("/user/update")
     public void updateUser(@RequestBody User usu){
-         usuSrv.addUser(usu);
+        usuSrv.addUser(usu);
     }
 }

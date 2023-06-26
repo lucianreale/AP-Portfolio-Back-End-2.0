@@ -5,8 +5,8 @@
 package com.portfolio.backend.controller;
 
 import java.util.List;
-import com.portfolio.backend.model.Education;
-import com.portfolio.backend.service.IEducationService;
+import com.portfolio.backend.model.Experience;
+import com.portfolio.backend.service.IExperienceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,39 +19,40 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author porce
+ * @author admin
  */
 @RestController
-public class EducationController {
+public class ExperienceController {
     
     @Autowired
-    private IEducationService eduSrv;
+    private IExperienceService expSrv;
     
 
-    @GetMapping ("/education")
+    @GetMapping ("/experience")
     @ResponseBody
-    public List<Education> getEducation() {
-        return eduSrv.getEducation();
+    public List<Experience> getExperience() {
+        return expSrv.getExperience();
     }
     
-    @PostMapping ("/education/add")
-    public void addEducation(@RequestBody Education edu){
-         eduSrv.addEducation(edu);
+    @PostMapping ("/experience/add")
+    public void addExperience(@RequestBody Experience exp){
+         expSrv.addExperience(exp);
     }
     
-    @DeleteMapping("/education/del/{id}")
-    public void deleteEducation(@PathVariable Long id){
-        eduSrv.deleteEducation(id);
+    @DeleteMapping("/experience/del/{id}")
+    public void deleteExperience(@PathVariable Long id){
+        expSrv.deleteExperience(id);
     }
     
-    @PutMapping ("/education/update")
-    public void updateUser(@RequestBody Education edu){
-         eduSrv.addEducation(edu);
+    @PutMapping ("/experience/update")
+    public void updateUser(@RequestBody Experience exp){
+         expSrv.addExperience(exp);
     }
     
-    @GetMapping ("/education/getbyuserid/{id}")
+    @GetMapping ("/experience/getbyuserid/{id}")
     @ResponseBody
-    public List<Education> getEducationByUserid(@PathVariable Long id) {
-        return eduSrv.getEducationByUserId(id);
+    public List<Experience> getExperienceByUserid(@PathVariable Long id) {
+        return expSrv.getExperienceByUserId(id);
     }
 }
+

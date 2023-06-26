@@ -12,43 +12,40 @@ import lombok.Getter;
 import lombok.Setter;
 /**
  *
- * @author porce
+ * @author admin
  */
 @Getter @Setter
 @Entity
-public class Education {
+public class Experience {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
     private Long userid;
-    private String school;
-    private String title;
+    private String position;
+    private String company;
     private String img;
-    private String career;
-    private Integer score;
-    private Integer start;
-    private Integer end;
+    private String description;
+    private String start;
+    private String end;
     
-    public Education (){
+    public Experience (){
     };
     
-    public Education (  Long id,
+    public Experience ( Long id,
                         Long userid,
-                        String school,
-                        String title,
+                        String position,
+                        String company,
                         String img,
-                        String career,
-                        Integer score,
-                        Integer start,
-                        Integer end){
+                        String description,
+                        String start,
+                        String end){
            
             this.id = id;
             this.userid = userid;
-            this.school = school;
-            this.title = title;
+            this.position = position;
+            this.company = company;
             this.img = img;
-            this.career = career;
-            this.score = score;
+            this.description = description;
             this.start = start;
             this.end = end;
     }
