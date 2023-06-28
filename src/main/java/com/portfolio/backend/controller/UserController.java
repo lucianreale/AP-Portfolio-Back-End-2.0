@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.portfolio.backend.model.User;
 import com.portfolio.backend.service.IUserService;
-import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
@@ -81,10 +80,10 @@ public class UserController {
         if (tmpUser != null) {
             System.out.println("no null");
             
-            System.out.println(tmpUser.getPass().toLowerCase());
-            System.out.println(usu.getPass().toLowerCase());
+            //System.out.println(tmpUser.getPass().toLowerCase());
+            //System.out.println(usu.getPass().toLowerCase());
             if (!tmpUser.getPass().toLowerCase().equals(usu.getPass().toLowerCase())){
-                    System.out.println("contraseña incorrecta");
+                    //System.out.println("contraseña incorrecta");
                     tmpUser = null;
             } else {
                 tmpUser.setPass("Ah, Ah, Ah!!!");

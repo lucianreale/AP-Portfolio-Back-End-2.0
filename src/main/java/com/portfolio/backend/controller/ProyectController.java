@@ -5,8 +5,8 @@
 package com.portfolio.backend.controller;
 
 import java.util.List;
-import com.portfolio.backend.model.Experience;
-import com.portfolio.backend.service.IExperienceService;
+import com.portfolio.backend.model.Proyect;
+import com.portfolio.backend.service.IProyectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,43 +16,42 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 /**
  *
  * @author admin
  */
 @RestController
-public class ExperienceController {
+public class ProyectController {
     
     @Autowired
-    private IExperienceService expSrv;
+    private IProyectService proSrv;
     
 
-    @GetMapping ("/experience")
+    @GetMapping ("/proyect")
     @ResponseBody
-    public List<Experience> getExperience() {
-        return expSrv.getExperience();
+    public List<Proyect> getProyect() {
+        return proSrv.getProyect();
     }
     
-    @PostMapping ("/experience/add")
-    public void addExperience(@RequestBody Experience exp){
-         expSrv.addExperience(exp);
+    @PostMapping ("/proyect/add")
+    public void addProyect(@RequestBody Proyect pro){
+         proSrv.addProyect(pro);
     }
     
-    @DeleteMapping("/experience/del/{id}")
-    public void deleteExperience(@PathVariable Long id){
-        expSrv.deleteExperience(id);
+    @DeleteMapping("/proyect/del/{id}")
+    public void deleteProyect(@PathVariable Long id){
+        proSrv.deleteProyect(id);
     }
     
-    @PutMapping ("/experience/update")
-    public void updateExperience(@RequestBody Experience exp){
-         expSrv.addExperience(exp);
+    @PutMapping ("/proyect/update")
+    public void updateProyect(@RequestBody Proyect exp){
+         proSrv.addProyect(exp);
     }
     
-    @GetMapping ("/experience/getbyuserid/{id}")
+    @GetMapping ("/proyect/getbyuserid/{id}")
     @ResponseBody
-    public List<Experience> getExperienceByUserid(@PathVariable Long id) {
-        return expSrv.getExperienceByUserId(id);
+    public List<Proyect> getProyectByUserid(@PathVariable Long id) {
+        return proSrv.getProyectByUserId(id);
     }
 }
 
