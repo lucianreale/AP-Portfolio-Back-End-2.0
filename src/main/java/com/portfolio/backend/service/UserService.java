@@ -23,7 +23,6 @@ public class UserService implements IUserService{
     @Override
     public List<User> getUser() {
         return usuRepo.findAll();
-        
     }
 
     @Override

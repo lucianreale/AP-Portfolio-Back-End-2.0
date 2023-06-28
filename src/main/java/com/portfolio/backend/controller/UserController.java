@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.portfolio.backend.model.User;
 import com.portfolio.backend.service.IUserService;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
@@ -50,17 +51,52 @@ public class UserController {
     @GetMapping ("/user")
     @ResponseBody
     public List<User> getUser() {
-        return usuSrv.getUser();
+        List<User> tmpUser;
+        tmpUser = usuSrv.getUser();
+        
+        for (User User : tmpUser) {
+            User.setPass("Ah, Ah, Ah!!!");
+            //System.out.println(User.getPass());
+        }   
+        return tmpUser;
     }
+    
     
     @DeleteMapping("/user/del/{id}")
     public void deleteUser(@PathVariable Long id){
         usuSrv.deleteUser(id);
     }
     
+
     @PostMapping ("/user/add")
     public void addUser(@RequestBody User usu){
         usuSrv.addUser(usu);
+    }
+    
+    @PostMapping ("/login")
+    public User login(@RequestBody User usu){
+        User tmpUser;
+        tmpUser = usuSrv.getUserByMail(usu.getMail());
+        
+        if (tmpUser != null) {
+            System.out.println("no null");
+            
+            System.out.println(tmpUser.getPass().toLowerCase());
+            System.out.println(usu.getPass().toLowerCase());
+            if (!tmpUser.getPass().toLowerCase().equals(usu.getPass().toLowerCase())){
+                    System.out.println("contraseña incorrecta");
+                    tmpUser = null;
+            } else {
+                tmpUser.setPass("Ah, Ah, Ah!!!");
+            }
+        } else {
+            System.out.println("correo inexistente");
+        }
+        
+        //System.out.println(tmpUser.getMail());
+        //System.out.println(tmpUser.getPass());
+        
+        return tmpUser;
     }
 
     @PutMapping ("/user/update")
