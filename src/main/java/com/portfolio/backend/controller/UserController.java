@@ -69,7 +69,13 @@ public class UserController {
 
     @PostMapping ("/user/add")
     public void addUser(@RequestBody User usu){
-        usuSrv.addUser(usu);
+        User tmpUser;
+        tmpUser = usuSrv.getUserByMail(usu.getMail());
+        
+        if (tmpUser == null) {
+            System.out.println("correo Inexistente, se procede al alta");
+            usuSrv.addUser(usu);
+        }    
     }
     
     @PostMapping ("/login")
@@ -78,23 +84,12 @@ public class UserController {
         tmpUser = usuSrv.getUserByMail(usu.getMail());
         
         if (tmpUser != null) {
-            System.out.println("no null");
-            
-            //System.out.println(tmpUser.getPass().toLowerCase());
-            //System.out.println(usu.getPass().toLowerCase());
             if (!tmpUser.getPass().toLowerCase().equals(usu.getPass().toLowerCase())){
-                    //System.out.println("contraseña incorrecta");
                     tmpUser = null;
             } else {
                 tmpUser.setPass("Ah, Ah, Ah!!!");
             }
-        } else {
-            System.out.println("correo inexistente");
-        }
-        
-        //System.out.println(tmpUser.getMail());
-        //System.out.println(tmpUser.getPass());
-        
+        }         
         return tmpUser;
     }
 
