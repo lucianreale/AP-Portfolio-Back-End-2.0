@@ -8,6 +8,7 @@ import java.util.List;
 import com.portfolio.backend.model.User;
 import com.portfolio.backend.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author porce
  */
+@CrossOrigin(origins = "*")
 @RestController
 public class UserController {
     
@@ -32,7 +34,7 @@ public class UserController {
     
     @GetMapping ("/test")
     public String test(){
-         return "Hola, el BackEnd se encuentra Online, 14/07/2023";
+         return "Hola, el BackEnd se encuentra Online CORS 4";
     }
     
     @GetMapping ("/user/getbyid/{id}")
