@@ -32,7 +32,7 @@ public class UserController {
     
     @GetMapping ("/test")
     public String test(){
-         return "Hola, el BackEnd se encuentra Online";
+         return "Hola, el BackEnd se encuentra Online, 14/07/2023";
     }
     
     @GetMapping ("/user/getbyid/{id}")
