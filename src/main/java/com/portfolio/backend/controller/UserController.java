@@ -34,7 +34,7 @@ public class UserController {
     
     @GetMapping ("/test")
     public String test(){
-         return "Hola, el BackEnd se encuentra Online CORS 4";
+         return "Hola, el BackEnd se encuentra Online CORS 5";
     }
     
     @GetMapping ("/user/getbyid/{id}")
